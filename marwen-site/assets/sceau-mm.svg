@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 240 240" role="img" aria-label="Sceau MM : Marwen, marque et marketing, Paris, MMXXVI">
+  <rect width="240" height="240" rx="120" fill="#0B0E0B"/><defs><path id="s-h" d="M21 120 A99 99 0 0 1 219 120"/><path id="s-b" d="M11 120 A109 109 0 0 0 229 120"/></defs>
+  <circle cx="120" cy="120" r="115" fill="none" stroke="#E7DFCE" stroke-width="4"/>
+  <circle cx="120" cy="120" r="93" fill="none" stroke="#E7DFCE" stroke-width="1.5"/>
+  <g font-family="Archivo Narrow, Arial Narrow, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="3.2" fill="#E7DFCE">
+    <text text-anchor="middle"><textPath href="#s-h" startOffset="50%">MARWEN · MARQUE &amp; MARKETING</textPath></text>
+    <text text-anchor="middle"><textPath href="#s-b" startOffset="50%">PARIS · MMXXVI</textPath></text>
+  </g>
+  <path d="M10 120 l4 -4 l4 4 l-4 4Z M222 120 l4 -4 l4 4 l-4 4Z" fill="#E7DFCE"/>
+  <g transform="translate(120 122) scale(0.8) translate(-120 -110)"><path d="M88.19 130.33 L78.40 87.12 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L52 89.50 L52 172 L64 172 L64 89.50 L70.74 89.50 L89.81 173.67 L104.32 76.50 L114 76.50 L114 172 L126 172 L126 76.50 L135.68 76.50 L150.19 173.67 L169.26 89.50 L176 89.50 L176 172 L188 172 L188 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L161.60 87.12 L151.81 130.33 L143.46 74.41 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95 L96.54 74.41ZM119.10 160 L119.10 84.50 L120.90 84.50 L120.90 160ZM58.90 160 L57.10 160 L57.10 97.50 L58.90 97.50ZM182.90 160 L181.10 160 L181.10 97.50 L182.90 97.50ZM40 185.50 L104 185.50 L104 179 L40 179ZM112 185.50 L128 185.50 L128 179 L112 179ZM136 185.50 L200 185.50 L200 179 L136 179Z" fill="#E7DFCE" fill-rule="evenodd"/><path d="M84 34 a12 12 0 1 0 12 18 a9.5 9.5 0 1 1 -12 -18Z" fill="#CE7A2A"/></g>
+</svg>

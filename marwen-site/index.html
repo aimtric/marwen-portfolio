@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marwen — carnet de terrain</title>
+<meta name="description" content="Portfolio de Marwen, marque et marketing à Paris, construit à partir de l'univers de Supernatural. En recherche d'alternance pour 2026/27.">
+<link rel="canonical" href="https://example.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Marwen — marque &amp; marketing, Paris">
+<meta property="og:description" content="Un portfolio construit comme une affaire de Supernatural. En recherche d'alternance pour 2026/27.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/assets/share.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0E0B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#DAD3C1" media="(prefers-color-scheme: light)">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Archivo+Narrow:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&family=Yellowtail&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/home.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="home">
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<!-- La voiture, dessinée une fois, réutilisée par le curseur et le compteur -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="car-sym" viewBox="0 0 400 110">
+      <g transform="matrix(-1 0 0 1 400 0)">
+        <path class="car-body" d="M6 76 L8 62 Q9 55 18 54 L118 51 L150 49 L176 31 Q181 27 190 27 L258 27 Q270 27 278 33 L304 48 L382 51 Q392 52 394 60 L396 76 L342 76 A27 27 0 0 0 288 76 L114 76 A27 27 0 0 0 60 76 Z"/>
+        <path class="car-glass" d="M182 33 L258 33 Q268 33 274 38 L294 49 L158 49 Z"/>
+        <rect class="car-body" x="224" y="32" width="5" height="18"/>
+        <path class="car-chrome-line" d="M12 63 L390 63"/>
+        <rect class="car-chrome" x="3" y="66" width="20" height="6" rx="2"/>
+        <rect class="car-chrome" x="378" y="66" width="20" height="6" rx="2"/>
+        <rect class="car-head" x="5" y="57" width="6" height="6"/>
+        <rect class="car-tail" x="390" y="56" width="5" height="7"/>
+        <circle class="car-tire" cx="87" cy="80" r="21"/><circle class="car-hub" cx="87" cy="80" r="9"/>
+        <circle class="car-tire" cx="315" cy="80" r="21"/><circle class="car-hub" cx="315" cy="80" r="9"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="mast">
+  <div class="wrap">
+    <a class="sigil-link" href="index.html" aria-label="Marwen — accueil">
+      <svg class="sigil" viewBox="36 24 168 164" role="img" aria-label="Monogramme MM de Marwen"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg>
+      <span class="sigil-word">Marwen</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#dossiers">Dossiers</a>
+      <a href="#univers">Univers</a>
+      <a href="#propos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="lamp" id="lamp-btn" type="button">Aube</button>
+  </div>
+</div>
+
+<canvas class="rain" id="rain" aria-hidden="true"></canvas>
+
+<main id="main">
+
+<!-- ===================================================== GÉNÉRIQUE -->
+<header class="h-hero" id="route" data-ep="Générique">
+  <svg class="h-scene" id="h-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-road" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--road)"/>
+        <stop offset="1" stop-color="var(--road-2)"/>
+      </linearGradient>
+      <linearGradient id="g-beam" x1="1" y1="0" x2="0" y2="0">
+        <stop offset="0" stop-color="var(--beam)"/>
+        <stop offset="1" stop-color="var(--beam)" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="g-lamp" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="var(--lamp-glow)"/>
+        <stop offset="1" stop-color="var(--lamp-glow)" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="g-moon" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="var(--moon)"/>
+        <stop offset="1" stop-color="var(--moon)" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <circle cx="1260" cy="190" r="170" fill="url(#g-moon)"/>
+
+    <g id="l-far">
+      <path fill="var(--mount)" d="M-40 600 L140 500 L300 540 L460 390 L560 440 L650 370 L780 460 L920 410 L1060 480 L1180 350 L1300 430 L1420 400 L1640 490 L1640 900 L-40 900 Z"/>
+      <path fill="var(--snow)" d="M460 390 L428 414 L446 410 L462 424 L478 408 L496 414 Z M1180 350 L1146 376 L1166 372 L1182 386 L1198 370 L1218 378 Z M650 370 L632 384 L652 382 L668 386 Z"/>
+    </g>
+
+    <rect class="fogband" x="-40" y="520" width="1680" height="160" fill="var(--fog)"/>
+
+    <g id="l-mid"><path fill="var(--ridge)" d="M-20 567 L-13 591 L-16 591 L-9 613 L-14 613 L-5 638 L-35 638 L-26 613 L-31 613 L-24 591 L-27 591 Z M4 561 L12 588 L8 588 L16 612 L10 612 L20 640 L-13 640 L-3 612 L-8 612 L-0 588 L-4 588 Z M28 547 L38 580 L33 580 L43 609 L36 609 L48 643 L8 643 L20 609 L14 609 L23 580 L18 580 Z M45 589 L51 608 L48 608 L53 625 L50 625 L57 645 L33 645 L40 625 L37 625 L42 608 L39 608 Z M73 576 L80 600 L76 600 L84 622 L79 622 L88 647 L58 647 L67 622 L62 622 L69 600 L65 600 Z M92 530 L104 570 L98 570 L110 606 L102 606 L117 649 L67 649 L82 606 L74 606 L86 570 L80 570 Z M115 542 L126 579 L120 579 L131 612 L124 612 L138 651 L92 651 L105 612 L98 612 L109 579 L104 579 Z M137 556 L147 589 L142 589 L152 618 L145 618 L158 653 L117 653 L129 618 L123 618 L132 589 L128 589 Z M155 558 L165 591 L160 591 L170 620 L163 620 L176 654 L135 654 L147 620 L141 620 L151 591 L146 591 Z M184 567 L192 597 L188 597 L197 624 L191 624 L202 656 L165 656 L176 624 L170 624 L179 597 L175 597 Z M210 558 L220 592 L215 592 L225 621 L218 621 L231 657 L189 657 L202 621 L195 621 L205 592 L200 592 Z M227 553 L237 589 L232 589 L243 620 L236 620 L249 657 L205 657 L218 620 L211 620 L222 589 L216 589 Z M251 583 L259 609 L255 609 L262 631 L257 631 L267 658 L235 658 L245 631 L240 631 L247 609 L244 609 Z M267 547 L279 585 L273 585 L284 618 L277 618 L291 658 L244 658 L258 618 L251 618 L262 585 L256 585 Z M290 556 L300 591 L295 591 L305 621 L299 621 L311 658 L269 658 L282 621 L275 621 L285 591 L280 591 Z M318 556 L329 590 L324 590 L334 621 L327 621 L340 657 L297 657 L310 621 L303 621 L313 590 L308 590 Z M347 575 L355 603 L351 603 L360 627 L354 627 L364 656 L330 656 L341 627 L335 627 L343 603 L339 603 Z M375 571 L383 599 L379 599 L387 624 L382 624 L392 655 L357 655 L367 624 L362 624 L370 599 L366 599 Z M404 540 L415 578 L409 578 L421 612 L413 612 L427 652 L380 652 L394 612 L387 612 L398 578 L392 578 Z M421 587 L427 609 L424 609 L431 628 L426 628 L434 651 L408 651 L416 628 L411 628 L418 609 L415 609 Z M440 532 L452 572 L446 572 L458 607 L450 607 L465 649 L415 649 L430 607 L422 607 L434 572 L428 572 Z M462 552 L472 584 L467 584 L477 613 L470 613 L482 647 L442 647 L454 613 L448 613 L457 584 L452 584 Z M482 557 L491 587 L487 587 L496 614 L490 614 L501 645 L464 645 L475 614 L469 614 L478 587 L473 587 Z M504 565 L512 592 L508 592 L516 615 L510 615 L520 643 L487 643 L497 615 L492 615 L500 592 L496 592 Z M528 548 L537 579 L533 579 L542 607 L536 607 L547 641 L508 641 L520 607 L514 607 L523 579 L519 579 Z M557 538 L567 572 L562 572 L572 602 L565 602 L577 638 L536 638 L548 602 L542 602 L552 572 L547 572 Z M586 524 L597 562 L591 562 L602 595 L595 595 L609 635 L562 635 L576 595 L569 595 L580 562 L574 562 Z M615 533 L625 567 L620 567 L630 596 L624 596 L636 632 L595 632 L607 596 L601 596 L611 567 L606 567 Z M634 519 L645 557 L639 557 L651 590 L643 590 L657 630 L610 630 L624 590 L617 590 L628 557 L623 557 Z M663 514 L675 552 L669 552 L680 587 L673 587 L687 628 L639 628 L654 587 L646 587 L658 552 L652 552 Z M687 524 L697 559 L692 559 L703 589 L696 589 L709 626 L666 626 L679 589 L672 589 L682 559 L677 559 Z M706 516 L717 553 L712 553 L723 585 L715 585 L729 625 L683 625 L697 585 L690 585 L701 553 L695 553 Z M730 550 L738 575 L734 575 L741 597 L736 597 L746 624 L715 624 L724 597 L719 597 L727 575 L723 575 Z M747 512 L758 550 L753 550 L764 583 L756 583 L770 623 L724 623 L738 583 L730 583 L742 550 L736 550 Z M777 561 L783 582 L780 582 L786 600 L782 600 L790 622 L764 622 L772 600 L768 600 L774 582 L771 582 Z M804 540 L812 568 L808 568 L817 593 L811 593 L821 622 L787 622 L797 593 L792 593 L800 568 L796 568 Z M822 548 L830 573 L826 573 L833 595 L829 595 L838 622 L807 622 L816 595 L811 595 L819 573 L815 573 Z M849 511 L860 549 L855 549 L866 582 L858 582 L873 623 L826 623 L840 582 L832 582 L843 549 L838 549 Z M866 528 L875 561 L870 561 L880 589 L874 589 L886 623 L846 623 L858 589 L851 589 L861 561 L856 561 Z M882 522 L893 557 L887 557 L898 587 L891 587 L904 624 L861 624 L874 587 L867 587 L877 557 L872 557 Z M903 513 L914 551 L909 551 L920 585 L912 585 L927 625 L879 625 L893 585 L886 585 L897 551 L892 551 Z M933 539 L942 569 L937 569 L946 595 L940 595 L951 627 L914 627 L925 595 L919 595 L928 569 L924 569 Z M963 554 L970 580 L966 580 L974 602 L969 602 L978 630 L947 630 L956 602 L951 602 L959 580 L955 580 Z M980 537 L989 569 L984 569 L994 597 L988 597 L999 631 L960 631 L972 597 L966 597 L975 569 L970 569 Z M996 565 L1003 588 L1000 588 L1006 608 L1002 608 L1010 633 L982 633 L990 608 L986 608 L993 588 L989 588 Z M1018 540 L1027 572 L1023 572 L1032 601 L1026 601 L1038 635 L998 635 L1010 601 L1004 601 L1013 572 L1008 572 Z M1036 579 L1042 599 L1039 599 L1045 616 L1041 616 L1048 637 L1024 637 L1031 616 L1027 616 L1033 599 L1030 599 Z M1064 564 L1072 590 L1068 590 L1076 612 L1071 612 L1080 640 L1048 640 L1058 612 L1053 612 L1060 590 L1057 590 Z M1094 529 L1105 568 L1099 568 L1111 602 L1103 602 L1117 643 L1070 643 L1084 602 L1076 602 L1088 568 L1082 568 Z M1115 560 L1123 589 L1119 589 L1128 614 L1122 614 L1133 645 L1097 645 L1108 614 L1102 614 L1111 589 L1106 589 Z M1138 550 L1148 583 L1143 583 L1153 612 L1146 612 L1159 647 L1118 647 L1130 612 L1124 612 L1133 583 L1128 583 Z M1163 558 L1172 589 L1167 589 L1176 617 L1170 617 L1182 649 L1143 649 L1155 617 L1149 617 L1158 589 L1153 589 Z M1187 535 L1199 575 L1193 575 L1205 610 L1197 610 L1212 652 L1163 652 L1177 610 L1170 610 L1181 575 L1176 575 Z M1210 570 L1219 599 L1214 599 L1223 623 L1217 623 L1228 653 L1193 653 L1203 623 L1198 623 L1206 599 L1202 599 Z M1236 585 L1243 609 L1240 609 L1247 630 L1242 630 L1251 655 L1222 655 L1230 630 L1226 630 L1233 609 L1229 609 Z M1257 538 L1269 578 L1263 578 L1275 613 L1267 613 L1282 656 L1232 656 L1247 613 L1239 613 L1251 578 L1245 578 Z M1280 566 L1289 597 L1284 597 L1294 624 L1288 624 L1299 657 L1261 657 L1272 624 L1266 624 L1275 597 L1271 597 Z M1296 576 L1304 603 L1300 603 L1308 628 L1303 628 L1313 658 L1279 658 L1289 628 L1284 628 L1292 603 L1288 603 Z M1320 602 L1326 621 L1323 621 L1329 638 L1325 638 L1332 658 L1308 658 L1315 638 L1312 638 L1317 621 L1315 621 Z M1345 562 L1354 595 L1350 595 L1359 623 L1353 623 L1365 658 L1325 658 L1337 623 L1330 623 L1340 595 L1335 595 Z M1362 562 L1371 595 L1366 595 L1376 623 L1370 623 L1382 658 L1342 658 L1354 623 L1347 623 L1357 595 L1352 595 Z M1384 558 L1394 592 L1389 592 L1399 622 L1393 622 L1405 657 L1363 657 L1376 622 L1369 622 L1379 592 L1374 592 Z M1405 556 L1415 590 L1410 590 L1420 620 L1414 620 L1426 656 L1384 656 L1397 620 L1390 620 L1400 590 L1395 590 Z M1431 599 L1437 618 L1434 618 L1440 635 L1436 635 L1443 655 L1420 655 L1427 635 L1423 635 L1429 618 L1426 618 Z M1448 555 L1458 589 L1453 589 L1463 619 L1457 619 L1469 654 L1428 654 L1440 619 L1433 619 L1443 589 L1438 589 Z M1478 581 L1485 605 L1481 605 L1489 626 L1484 626 L1493 652 L1463 652 L1472 626 L1467 626 L1474 605 L1471 605 Z M1500 557 L1510 588 L1505 588 L1514 616 L1508 616 L1520 650 L1481 650 L1492 616 L1486 616 L1495 588 L1491 588 Z M1521 570 L1529 596 L1525 596 L1533 620 L1527 620 L1537 648 L1504 648 L1514 620 L1509 620 L1517 596 L1513 596 Z M1541 567 L1549 594 L1545 594 L1553 618 L1548 618 L1558 646 L1524 646 L1534 618 L1529 618 L1537 594 L1533 594 Z M1565 569 L1573 595 L1569 595 L1577 617 L1572 617 L1581 644 L1550 644 L1559 617 L1554 617 L1562 595 L1558 595 Z M1587 536 L1597 572 L1592 572 L1603 604 L1595 604 L1609 642 L1565 642 L1578 604 L1571 604 L1581 572 L1576 572 Z M1603 548 L1612 579 L1608 579 L1617 607 L1611 607 L1622 640 L1584 640 L1595 607 L1589 607 L1598 579 L1594 579 Z M1629 562 L1637 588 L1633 588 L1641 610 L1636 610 L1645 637 L1614 637 L1623 610 L1618 610 L1626 588 L1622 588 Z M-60 900 L-60 637.8872345606504 L-20 638 L20 642 L60 646 L100 650 L140 653 L180 656 L220 657 L260 658 L300 658 L340 656 L380 654 L420 651 L460 648 L500 644 L540 639 L580 635 L620 631 L660 628 L700 625 L740 623 L780 622 L820 622 L860 623 L900 625 L940 628 L980 631 L1020 635 L1060 639 L1100 643 L1140 647 L1180 651 L1220 654 L1260 656 L1300 658 L1340 658 L1380 657 L1420 656 L1460 653 L1500 650 L1540 646 L1580 642 L1620 638 L1660 634 L1680 900 Z"/></g>
+
+    <rect class="fogband b2" x="-40" y="640" width="1680" height="110" fill="var(--fog-2)"/>
+
+    <g id="l-poles" stroke="var(--near)" fill="none" stroke-width="5">
+      <path d="M1380 776 L1380 470 M1340 492 L1420 492 M1350 512 L1410 512"/>
+      <path d="M1560 776 L1560 500 M1522 520 L1598 520"/>
+      <path d="M1340 494 Q1460 540 1522 522 M1420 494 Q1500 548 1598 522 M1350 514 Q1460 560 1560 524" stroke-width="1.6"/>
+    </g>
+
+    <g id="l-lamp">
+      <circle cx="1220" cy="560" r="150" fill="url(#g-lamp)"/>
+      <path d="M1250 776 L1250 556 Q1250 540 1234 540 L1212 540" stroke="var(--near)" stroke-width="7" fill="none"/>
+      <rect x="1198" y="538" width="26" height="9" rx="3" fill="var(--sodium-hot)"/>
+      <path d="M1211 547 L1120 776 L1310 776 Z" fill="var(--lamp-glow)" opacity="0.45"/>
+    </g>
+
+    <g id="l-nearL"><path fill="var(--near)" d="M-30 505 L-3 597 L-16 597 L11 678 L-7 678 L27 775 L-87 775 L-53 678 L-71 678 L-44 597 L-57 597 Z M23 478 L53 579 L38 579 L68 668 L48 668 L86 775 L-39 775 L-2 668 L-22 668 L8 579 L-7 579 Z M82 487 L111 585 L96 585 L125 671 L106 671 L142 775 L21 775 L58 671 L38 671 L67 585 L53 585 Z M140 600 L157 660 L149 660 L166 712 L154 712 L176 775 L103 775 L125 712 L113 712 L131 660 L122 660 Z M186 454 L218 563 L202 563 L234 659 L213 659 L253 775 L118 775 L159 659 L137 659 L170 563 L154 563 Z M237 461 L268 568 L253 568 L284 662 L263 662 L303 775 L171 775 L210 662 L189 662 L221 568 L205 568 Z M274 530 L298 613 L286 613 L311 687 L294 687 L325 775 L222 775 L253 687 L237 687 L261 613 L249 613 Z M314 518 L340 605 L327 605 L353 682 L336 682 L368 775 L260 775 L293 682 L275 682 L301 605 L288 605 Z M-60 900 L-60 772 L360 772 L360 900 Z"/></g>
+    <g id="l-nearR"><path fill="var(--near)" d="M1260 556 L1282 631 L1271 631 L1293 696 L1278 696 L1306 775 L1214 775 L1242 696 L1227 696 L1249 631 L1238 631 Z M1298 507 L1325 598 L1311 598 L1338 679 L1320 679 L1354 775 L1242 775 L1275 679 L1257 679 L1284 598 L1271 598 Z M1334 525 L1359 610 L1346 610 L1372 685 L1355 685 L1386 775 L1281 775 L1313 685 L1296 685 L1321 610 L1309 610 Z M1377 596 L1395 657 L1386 657 L1404 711 L1392 711 L1415 775 L1340 775 L1362 711 L1350 711 L1368 657 L1359 657 Z M1425 599 L1442 659 L1433 659 L1451 712 L1439 712 L1461 775 L1388 775 L1410 712 L1398 712 L1416 659 L1407 659 Z M1470 595 L1488 656 L1479 656 L1497 710 L1485 710 L1508 775 L1432 775 L1455 710 L1442 710 L1461 656 L1452 656 Z M1506 541 L1530 621 L1518 621 L1541 691 L1526 691 L1555 775 L1457 775 L1487 691 L1471 691 L1494 621 L1483 621 Z M1562 586 L1581 651 L1571 651 L1590 707 L1577 707 L1601 775 L1522 775 L1546 707 L1533 707 L1552 651 L1543 651 Z M1601 511 L1628 601 L1615 601 L1641 680 L1624 680 L1657 775 L1546 775 L1579 680 L1562 680 L1588 601 L1575 601 Z M1240 900 L1240 772 L1660 772 L1660 900 Z"/></g>
+
+    <g id="l-road">
+      <rect x="-40" y="772" width="1680" height="140" fill="url(#g-road)"/>
+      <path d="M-40 784 L1640 784" stroke="var(--road-edge)" stroke-width="2"/>
+      <path d="M-40 838 L1640 838" stroke="var(--road-line)" stroke-width="5" stroke-dasharray="60 46"/>
+      <rect x="-40" y="845" width="1680" height="60" fill="var(--wet)"/>
+    </g>
+
+    <g id="hero-car" transform="translate(180 776) scale(0.62)">
+      <g transform="matrix(-1 0 0 1 400 0)">
+        <polygon points="8,56 -760,-40 -760,150 8,68" fill="url(#g-beam)" class="car-beam"/>
+        <path class="car-body" d="M6 76 L8 62 Q9 55 18 54 L118 51 L150 49 L176 31 Q181 27 190 27 L258 27 Q270 27 278 33 L304 48 L382 51 Q392 52 394 60 L396 76 L342 76 A27 27 0 0 0 288 76 L114 76 A27 27 0 0 0 60 76 Z"/>
+        <path class="car-sheen" d="M20 55 L118 52 L150 50 M304 49 L380 52"/>
+        <path class="car-glass" d="M182 33 L258 33 Q268 33 274 38 L294 49 L158 49 Z"/>
+        <rect class="car-body" x="224" y="32" width="5" height="18"/>
+        <path class="car-chrome-line" d="M12 63 L390 63"/>
+        <rect class="car-chrome" x="3" y="66" width="20" height="6" rx="2"/>
+        <rect class="car-chrome" x="378" y="66" width="20" height="6" rx="2"/>
+        <rect class="car-head" x="5" y="57" width="6" height="6"/>
+        <rect class="car-tail" x="390" y="56" width="5" height="7"/>
+        <circle class="car-tail-glow" cx="393" cy="60" r="14"/>
+        <circle class="car-tire" cx="87" cy="80" r="21"/>
+        <g class="spokes" id="spk-f"><circle class="car-hub" cx="87" cy="80" r="10"/><path class="car-spoke" d="M87 71 L87 89 M78 80 L96 80"/></g>
+        <circle class="car-tire" cx="315" cy="80" r="21"/>
+        <g class="spokes" id="spk-r"><circle class="car-hub" cx="315" cy="80" r="10"/><path class="car-spoke" d="M315 71 L315 89 M306 80 L324 80"/></g>
+      </g>
+    </g>
+  </svg>
+
+  <div class="h-fog" aria-hidden="true"></div>
+
+  <div class="h-inner">
+    <div class="motel">
+      <div class="motel-sign">
+        <h1 class="motel-script">Marwen</h1>
+        <div class="motel-box"><span class="motel-word">P<span class="flick">o</span>rtfolio</span></div>
+        <div class="motel-vac"><span class="vac-a">Alternance</span><span class="vac-b">Disponible</span></div>
+      </div>
+      <div class="motel-board" aria-label="Panneau à lettres">
+        <span>Stratégie · Identité · Web</span>
+        <span>Paris — 2026/27</span>
+      </div>
+      <div class="motel-poles" aria-hidden="true"></div>
+    </div>
+
+    <div class="h-copy">
+      <span class="flag">Saison III · d'après Supernatural (2005–2020)</span>
+      <p class="h-title">Marque et marketing, <em>depuis Paris.</em></p>
+      <p class="h-lede">Ce portfolio se lit comme une affaire de Supernatural : une route de nuit, un motel, et un carnet où chaque dossier est traité en entier — recherche, identité, intégration.</p>
+      <div class="h-actions">
+        <a class="btn btn-hot" href="#dossiers">Ouvrir les dossiers</a>
+        <a class="btn" href="cahier-de-recherche.html">Lire le carnet de recherche</a>
+      </div>
+      <div class="h-ambient">
+        <button class="pill" id="rain-btn" type="button" aria-pressed="true">Pluie : visible</button>
+        <button class="pill" id="sound-btn" type="button" aria-pressed="false">Son de pluie : coupé</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="h-cue" aria-hidden="true">Faites défiler — la voiture avance</p>
+</header>
+
+<!-- ===================================================== PRÉCÉDEMMENT -->
+<section class="recap" id="precedemment" data-ep="Précédemment">
+  <div class="wrap">
+    <div class="recap-card" data-reveal>
+      <span class="recap-k">Précédemment dans…</span>
+      <h2 class="recap-t">Marwen</h2>
+    </div>
+
+    <ol class="cuts">
+      <li class="cut" data-reveal>
+        <span class="cut-tc">Marseille · Tunis — été 2026</span>
+        <p>Un transitaire sans site et sans marque. Quatre mois de stage, un site construit à partir de rien, mis en ligne.</p>
+        <a href="supra-cargo.html">Dossier III-01 →</a>
+      </li>
+      <li class="cut" data-reveal>
+        <span class="cut-tc">ESD · Paris</span>
+        <p>Un vrai brief : le Pôle Rayonnement de l'Armée de Terre. Une campagne complète, puis un pitch devant le Colonel et son équipe.</p>
+        <a href="prat.html">Dossier III-02 →</a>
+      </li>
+      <li class="cut" data-reveal>
+        <span class="cut-tc">Ce site</span>
+        <p>Une identité construite à partir d'une série que j'aime, documentée de la recherche jusqu'au brand kit.</p>
+        <a href="cahier-de-recherche.html">Cahier de recherche →</a>
+      </li>
+    </ol>
+
+    <div class="now" data-reveal>
+      <span class="now-k">Maintenant</span>
+      <p class="now-t">En recherche d'alternance · 2026/27</p>
+      <p class="now-s">4 jours en entreprise, 1 jour à l'école. Marque, marketing, social media.</p>
+    </div>
+  </div>
+</section>
+
+<div class="salt" role="separator"><span>Ligne de sel · ne pas franchir sans dossier</span></div>
+
+<!-- ===================================================== DOSSIERS -->
+<section class="ep-sec" id="dossiers" data-ep="Ép. 1">
+  <div class="wrap">
+    <div class="ep">
+      <span class="ep-k">Saison III · Épisode 1</span>
+      <h2>Les dossiers</h2>
+      <p class="lede">Glissez la voiture le long de la route pour passer d'un dossier à l'autre. Les flèches du clavier marchent aussi.</p>
+    </div>
+
+    <div class="reel" id="reel">
+      <div class="reel-view" id="reel-view">
+        <div class="reel-track" id="reel-track">
+
+          <article class="file">
+            <div class="file-tab"><span>III-01</span><span>2026</span></div>
+            <div class="file-in">
+              <span class="stamp">Clos</span>
+              <figure class="polar">
+                <svg viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+                  <rect width="300" height="180" fill="var(--sky-1)"/>
+                  <circle cx="236" cy="42" r="14" fill="var(--moon-solid)"/>
+                  <rect y="128" width="300" height="52" fill="var(--sea)"/>
+                  <path d="M40 112 L262 112 L250 132 L56 132 Z" fill="var(--near)"/>
+                  <rect x="70" y="96" width="30" height="16" fill="var(--sodium)"/>
+                  <rect x="102" y="96" width="30" height="16" fill="var(--mousse)"/>
+                  <rect x="134" y="96" width="30" height="16" fill="var(--sang)"/>
+                  <rect x="86" y="80" width="30" height="16" fill="var(--mousse)"/>
+                  <rect x="118" y="80" width="30" height="16" fill="var(--sodium)"/>
+                  <rect x="200" y="78" width="30" height="34" fill="var(--near)"/>
+                  <rect x="206" y="84" width="6" height="5" fill="var(--sodium-hot)"/>
+                  <rect x="216" y="84" width="6" height="5" fill="var(--sodium-hot)"/>
+                  <path d="M60 140 L240 140" stroke="var(--sodium)" stroke-width="2" stroke-dasharray="6 10" opacity="0.6"/>
+                </svg>
+                <figcaption>Marseille → Tunis</figcaption>
+              </figure>
+              <h3>Supra Cargo</h3>
+              <p>Un transitaire opérant entre Marseille et Tunis n'avait aucun site. J'en ai construit un de zéro pendant quatre mois de stage : arborescence, contenus, identité, intégration. Il est en ligne.</p>
+              <div class="case-tags"><span>Conception web</span><span>Marque</span><span>Rédaction</span><span>Intégration</span></div>
+              <a class="file-go" href="supra-cargo.html">Ouvrir le dossier →</a>
+            </div>
+          </article>
+
+          <article class="file">
+            <div class="file-tab"><span>III-02</span><span>ESD</span></div>
+            <div class="file-in">
+              <span class="stamp">Clos</span>
+              <figure class="polar">
+                <svg viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+                  <rect width="300" height="180" fill="var(--sky-1)"/>
+                  <rect x="60" y="22" width="180" height="104" fill="var(--screen)"/>
+                  <rect x="76" y="36" width="90" height="8" fill="var(--screen-ink)"/>
+                  <rect x="76" y="52" width="60" height="5" fill="var(--screen-ink)" opacity="0.6"/>
+                  <rect x="88" y="98" width="16" height="16" fill="var(--sodium)"/>
+                  <rect x="112" y="84" width="16" height="30" fill="var(--sodium)"/>
+                  <rect x="136" y="70" width="16" height="44" fill="var(--sodium)"/>
+                  <rect x="160" y="62" width="16" height="52" fill="var(--sang)"/>
+                  <path d="M200 70 L222 70 M200 82 L218 82 M200 94 L224 94" stroke="var(--screen-ink)" stroke-width="4" opacity="0.6"/>
+                  <path d="M0 180 L0 160 Q20 138 40 160 Q60 136 80 160 Q100 140 120 160 Q140 134 160 160 Q180 140 200 160 Q220 136 240 160 Q260 140 280 160 Q292 150 300 158 L300 180 Z" fill="var(--near)"/>
+                </svg>
+                <figcaption>Pitch devant le Colonel</figcaption>
+              </figure>
+              <h3>PRAT — Armée de Terre</h3>
+              <p>Brief client réel du Pôle Rayonnement de l'Armée de Terre : clarifier et valoriser les enjeux du Service National. Stratégie, visuels, plan social media, puis pitch deck devant le Colonel et son équipe. Retour positif sur les recommandations.</p>
+              <div class="case-tags"><span>Stratégie</span><span>Social media</span><span>Contenus visuels</span><span>Pitch</span></div>
+              <a class="file-go" href="prat.html">Ouvrir le dossier →</a>
+            </div>
+          </article>
+
+          <article class="file cold">
+            <div class="file-tab"><span>III-03</span><span>Ouvert</span></div>
+            <div class="file-in">
+              <span class="stamp stamp-cold">Ouvert</span>
+              <figure class="polar">
+                <svg viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+                  <rect width="300" height="180" fill="var(--sky-2)"/>
+                  <path d="M110 180 L146 92 L154 92 L190 180 Z" fill="var(--road)"/>
+                  <path d="M150 100 L150 112 M150 124 L150 140 M150 152 L150 176" stroke="var(--road-line)" stroke-width="2"/>
+                  <path d="M0 96 L300 96 L300 110 L0 110 Z" fill="var(--fog)"/>
+                  <path d="M0 100 L40 70 L60 96 L90 64 L120 98 L180 98 L210 66 L240 96 L270 72 L300 98 L300 104 L0 104 Z" fill="var(--ridge)"/>
+                  <rect x="214" y="104" width="4" height="54" fill="var(--near)"/>
+                  <rect x="190" y="104" width="52" height="24" fill="var(--sign-green)"/>
+                  <text x="216" y="120" text-anchor="middle" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="11" fill="#EDEAE0">À VENIR</text>
+                </svg>
+                <figcaption>La prochaine affaire</figcaption>
+              </figure>
+              <h3>Non attribué</h3>
+              <p>Réservé à l'alternance. Cette fiche accueillera la première campagne, le premier lancement ou la première refonte que je livrerai : ce qu'on m'a confié, et le chiffre qui a bougé.</p>
+              <div class="case-tags"><span>En attente</span></div>
+              <a class="file-go" href="#contact">Me confier ce dossier →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="reel-road" id="reel-road" role="slider" tabindex="0" aria-label="Choisir un dossier" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-valuetext="III-01, Supra Cargo">
+        <div class="reel-lane" aria-hidden="true"></div>
+        <span class="reel-post" style="left:0%">III-01</span>
+        <span class="reel-post" style="left:50%">III-02</span>
+        <span class="reel-post" style="left:100%">III-03</span>
+        <svg class="reel-car" id="reel-car" viewBox="0 0 400 110" aria-hidden="true" focusable="false"><use href="#car-sym"/></svg>
+      </div>
+      <div class="reel-nav">
+        <button class="pill" id="reel-prev" type="button">← Précédent</button>
+        <span class="reel-count" id="reel-count">1 / 3</span>
+        <button class="pill" id="reel-next" type="button">Suivant →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MIXTAPE -->
+<section class="ep-sec band" id="mixtape" data-ep="Ép. 2">
+  <div class="wrap">
+    <div class="ep">
+      <span class="ep-k">Saison III · Épisode 2</span>
+      <h2>La mixtape</h2>
+      <p class="lede">Dans la série, la boîte à cassettes de la voiture ne contient que du rock classique. La mienne contient ce que je sais faire. Ouvrez une cassette pour lire les deux faces.</p>
+    </div>
+
+    <div class="tapes">
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Stratégie de campagne</span><span class="tape-sub">Cibles · Messages · Canaux</span></span><span class="tape-no">MW-01</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>PRAT — Armée de Terre : définition des cibles, messages clés, canaux de diffusion et plan d'action.</p></div>
+          <div class="side"><b>Face B</b><p>Supra Cargo : qui sont les acheteurs, et ce qu'ils doivent savoir avant de confier une expédition.</p></div>
+        </div>
+      </details>
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Identité visuelle</span><span class="tape-sub">Logo · Couleurs · Typos</span></span><span class="tape-no">MW-02</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>Supra Cargo : logo, palette et typographie, pensés pour le site et les documents.</p></div>
+          <div class="side"><b>Face B</b><p>Ce portfolio : un système complet tiré de Supernatural. <a href="identite.html">Voir l'identité</a>.</p></div>
+        </div>
+      </details>
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Social media</span><span class="tape-sub">Plan · Calendrier · Formats</span></span><span class="tape-no">MW-03</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>PRAT : un plan social media adapté aux codes de communication de l'institution militaire.</p></div>
+          <div class="side"><b>Face B</b><p>Le brand kit : formats LinkedIn et règles de voix. <a href="brand-kit.html">Voir le kit</a>.</p></div>
+        </div>
+      </details>
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Rédaction</span><span class="tape-sub">Contenus · Ton · Clarté</span></span><span class="tape-no">MW-04</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>Supra Cargo : tous les contenus du site, écrits pour des clients qui ne connaissaient pas l'entreprise.</p></div>
+          <div class="side"><b>Face B</b><p>Ce site : chaque texte en français, écrit pour être lu vite.</p></div>
+        </div>
+      </details>
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Intégration web</span><span class="tape-sub">HTML · CSS · Mise en ligne</span></span><span class="tape-no">MW-05</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>Supra Cargo : site livré et mis en ligne.</p></div>
+          <div class="side"><b>Face B</b><p>Ce portfolio : un site statique, sans framework, déployable en cinq minutes.</p></div>
+        </div>
+      </details>
+      <details class="tape">
+        <summary><svg class="tape-logo" viewBox="36 24 168 164" aria-hidden="true" focusable="false"><path d="M94.57 74.11 L87.79 119.50 L80.35 86.67 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L49.50 89.50 L49.50 172 L66.50 172 L66.50 89.50 L70.10 89.50 L70.10 95.73 L88.97 179 L40 179 L40 185.50 L104 185.50 L104 179 L91.03 179 L106.34 76.50 L111.50 76.50 L111.50 172 L128.50 172 L128.50 76.50 L133.66 76.50 L148.97 179 L136 179 L136 185.50 L200 185.50 L200 179 L151.03 179 L169.90 95.73 L169.90 89.50 L173.50 89.50 L173.50 172 L190.50 172 L190.50 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L159.65 86.67 L152.21 119.50 L145.43 74.11 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95ZM112 185.50 L128 185.50 L128 179 L112 179Z" fill="currentColor" fill-rule="evenodd"/></svg><span class="tape-label"><span class="tape-title">Pitch</span><span class="tape-sub">Deck · Restitution · Oral</span></span><span class="tape-no">MW-06</span></summary>
+        <div class="tape-body">
+          <div class="side"><b>Face A</b><p>PRAT : pitch deck présenté devant le Colonel et son équipe. Retour positif sur la qualité des recommandations.</p></div>
+          <div class="side"><b>Face B</b><p>Coordination d'équipe : garder la stratégie, les visuels et le social media cohérents.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== LA VILLE -->
+<section class="ep-sec town-sec" id="univers" data-ep="Ép. 3">
+  <div class="wrap">
+    <div class="ep">
+      <span class="ep-k">Saison III · Épisode 3</span>
+      <h2>La ville</h2>
+      <p class="lede">Toute l'identité de ce site vient de <em>Supernatural</em> : la nuit, les routes, le bois, le cuir, le carnet de chasseur. Derrière chaque porte, une pièce qui explique comment.</p>
+    </div>
+  </div>
+
+  <svg class="town" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-town" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--sky-1)"/>
+        <stop offset="1" stop-color="var(--sky-2)"/>
+      </linearGradient>
+    </defs>
+    <rect width="1600" height="520" fill="url(#g-town)"/>
+    <path fill="var(--mount)" d="M-20 255 L-14 276 L-17 276 L-11 295 L-15 295 L-7 317 L-33 317 L-25 295 L-29 295 L-23 276 L-26 276 Z M1 232 L9 262 L5 262 L14 288 L8 288 L19 319 L-17 319 L-7 288 L-12 288 L-4 262 L-8 262 Z M20 254 L27 276 L24 276 L30 296 L26 296 L34 320 L7 320 L15 296 L10 296 L17 276 L14 276 Z M41 271 L46 288 L44 288 L49 303 L45 303 L52 320 L31 320 L37 303 L34 303 L39 288 L36 288 Z M61 250 L69 274 L65 274 L72 295 L68 295 L77 321 L46 321 L55 295 L51 295 L58 274 L54 274 Z M85 277 L90 292 L87 292 L92 306 L89 306 L94 322 L76 322 L81 306 L78 306 L83 292 L81 292 Z M103 277 L107 293 L105 293 L109 306 L106 306 L112 322 L93 322 L99 306 L96 306 L100 293 L98 293 Z M126 247 L134 273 L130 273 L138 295 L133 295 L142 322 L111 322 L120 295 L115 295 L123 273 L119 273 Z M141 233 L150 263 L145 263 L154 290 L148 290 L160 322 L122 322 L133 290 L127 290 L136 263 L132 263 Z M166 249 L174 273 L170 273 L177 295 L173 295 L182 321 L151 321 L160 295 L155 295 L163 273 L159 273 Z M188 273 L193 289 L190 289 L195 304 L192 304 L198 321 L178 321 L184 304 L181 304 L185 289 L183 289 Z M202 254 L209 277 L205 277 L212 296 L208 296 L216 320 L188 320 L196 296 L192 296 L199 277 L195 277 Z M217 270 L222 287 L219 287 L224 302 L221 302 L227 320 L206 320 L213 302 L209 302 L214 287 L212 287 Z M234 277 L238 291 L236 291 L240 304 L237 304 L242 319 L225 319 L230 304 L227 304 L232 291 L229 291 Z M253 256 L259 277 L256 277 L263 295 L258 295 L266 318 L240 318 L248 295 L244 295 L250 277 L247 277 Z M277 250 L284 273 L281 273 L287 292 L283 292 L291 316 L263 316 L272 292 L267 292 L274 273 L271 273 Z M299 249 L306 272 L302 272 L309 291 L304 291 L313 314 L285 314 L294 291 L289 291 L296 272 L292 272 Z M321 250 L327 271 L324 271 L330 290 L326 290 L334 313 L308 313 L316 290 L311 290 L318 271 L315 271 Z M338 221 L347 252 L343 252 L352 279 L346 279 L357 311 L319 311 L331 279 L325 279 L334 252 L329 252 Z M364 227 L372 255 L368 255 L377 279 L371 279 L381 309 L347 309 L357 279 L352 279 L360 255 L356 255 Z M387 251 L392 270 L390 270 L395 286 L391 286 L398 307 L375 307 L382 286 L378 286 L384 270 L381 270 Z M403 250 L409 269 L406 269 L412 285 L408 285 L415 305 L392 305 L399 285 L395 285 L401 269 L398 269 Z M418 225 L426 252 L422 252 L430 275 L425 275 L435 303 L402 303 L412 275 L406 275 L414 252 L410 252 Z M437 219 L445 247 L441 247 L450 272 L444 272 L454 301 L420 301 L430 272 L425 272 L433 247 L429 247 Z M456 211 L465 241 L460 241 L469 268 L463 268 L474 299 L437 299 L448 268 L442 268 L451 241 L447 241 Z M480 257 L484 270 L482 270 L486 282 L483 282 L488 297 L472 297 L477 282 L474 282 L478 270 L476 270 Z M496 210 L505 239 L501 239 L509 264 L504 264 L514 295 L478 295 L489 264 L484 264 L492 239 L488 239 Z M516 204 L525 234 L521 234 L530 261 L524 261 L535 293 L497 293 L509 261 L503 261 L512 234 L507 234 Z M535 248 L539 263 L537 263 L541 276 L539 276 L544 291 L526 291 L531 276 L528 276 L533 263 L530 263 Z M556 210 L564 237 L560 237 L568 261 L563 261 L573 289 L540 289 L550 261 L544 261 L552 237 L548 237 Z M574 243 L578 258 L576 258 L580 272 L577 272 L583 288 L564 288 L570 272 L567 272 L571 258 L569 258 Z M592 198 L601 228 L596 228 L605 254 L599 254 L610 286 L573 286 L584 254 L578 254 L587 228 L583 228 Z M615 239 L619 254 L617 254 L622 268 L619 268 L624 284 L605 284 L611 268 L608 268 L612 254 L610 254 Z M632 238 L636 254 L634 254 L639 267 L635 267 L641 283 L622 283 L628 267 L625 267 L629 254 L627 254 Z M646 202 L654 230 L650 230 L658 254 L653 254 L663 282 L630 282 L640 254 L634 254 L642 230 L638 230 Z M663 213 L669 236 L666 236 L673 257 L668 257 L677 281 L648 281 L657 257 L652 257 L659 236 L656 236 Z M682 231 L687 248 L684 248 L689 263 L686 263 L692 280 L672 280 L678 263 L674 263 L679 248 L677 248 Z M705 233 L709 249 L707 249 L712 263 L709 263 L714 279 L695 279 L701 263 L698 263 L702 249 L700 249 Z M726 233 L731 248 L729 248 L733 262 L730 262 L736 279 L717 279 L723 262 L719 262 L724 248 L722 248 Z M745 228 L751 245 L748 245 L753 260 L750 260 L756 278 L735 278 L741 260 L738 260 L743 245 L740 245 Z M763 190 L772 220 L767 220 L776 246 L770 246 L781 278 L744 278 L755 246 L749 246 L758 220 L754 220 Z M786 223 L792 242 L789 242 L795 258 L791 258 L798 278 L775 278 L782 258 L778 258 L784 242 L781 242 Z M811 228 L816 245 L814 245 L819 260 L815 260 L822 278 L800 278 L807 260 L803 260 L808 245 L806 245 Z M830 196 L838 224 L834 224 L842 249 L837 249 L847 279 L812 279 L823 249 L817 249 L826 224 L821 224 Z M851 234 L856 250 L854 250 L858 263 L855 263 L861 279 L842 279 L848 263 L845 263 L849 250 L847 250 Z M877 230 L882 247 L880 247 L885 262 L882 262 L888 280 L867 280 L873 262 L870 262 L875 247 L872 247 Z M894 203 L902 229 L898 229 L906 253 L901 253 L911 281 L878 281 L888 253 L882 253 L890 229 L886 229 Z M912 227 L918 246 L915 246 L921 263 L917 263 L924 282 L901 282 L908 263 L904 263 L910 246 L907 246 Z M927 239 L932 254 L929 254 L934 267 L931 267 L937 283 L918 283 L923 267 L920 267 L925 254 L923 254 Z M948 233 L953 250 L951 250 L956 266 L953 266 L959 285 L937 285 L944 266 L940 266 L946 250 L943 250 Z M969 228 L975 248 L972 248 L978 265 L974 265 L982 286 L957 286 L964 265 L961 265 L966 248 L964 248 Z M989 200 L998 230 L993 230 L1002 256 L996 256 L1007 288 L970 288 L981 256 L976 256 L984 230 L980 230 Z M1009 221 L1016 244 L1012 244 L1019 265 L1014 265 L1023 290 L994 290 L1003 265 L998 265 L1005 244 L1002 244 Z M1033 243 L1038 260 L1036 260 L1040 274 L1037 274 L1043 292 L1023 292 L1029 274 L1026 274 L1031 260 L1028 260 Z M1049 208 L1058 237 L1053 237 L1062 263 L1056 263 L1067 294 L1031 294 L1042 263 L1036 263 L1045 237 L1040 237 Z M1073 244 L1078 262 L1075 262 L1081 277 L1077 277 L1084 296 L1062 296 L1068 277 L1065 277 L1070 262 L1067 262 Z M1089 221 L1097 247 L1093 247 L1101 270 L1095 270 L1105 298 L1073 298 L1083 270 L1077 270 L1085 247 L1081 247 Z M1114 251 L1119 268 L1117 268 L1122 283 L1118 283 L1125 301 L1104 301 L1110 283 L1107 283 L1112 268 L1109 268 Z M1140 219 L1148 248 L1144 248 L1152 273 L1147 273 L1157 303 L1122 303 L1133 273 L1127 273 L1135 248 L1131 248 Z M1161 244 L1167 265 L1164 265 L1170 283 L1166 283 L1174 305 L1148 305 L1156 283 L1152 283 L1158 265 L1155 265 Z M1176 265 L1180 279 L1178 279 L1183 292 L1180 292 L1185 307 L1167 307 L1173 292 L1170 292 L1174 279 L1172 279 Z M1202 257 L1207 275 L1204 275 L1210 291 L1206 291 L1213 309 L1191 309 L1197 291 L1194 291 L1199 275 L1196 275 Z M1224 259 L1229 277 L1227 277 L1232 292 L1229 292 L1235 311 L1213 311 L1220 292 L1216 292 L1222 277 L1219 277 Z M1248 244 L1255 267 L1252 267 L1259 288 L1254 288 L1263 313 L1233 313 L1242 288 L1237 288 L1245 267 L1241 267 Z M1266 266 L1270 283 L1268 283 L1273 297 L1270 297 L1276 315 L1255 315 L1261 297 L1258 297 L1263 283 L1261 283 Z M1288 273 L1293 288 L1290 288 L1295 301 L1292 301 L1297 317 L1279 317 L1285 301 L1282 301 L1286 288 L1284 288 Z M1305 250 L1312 273 L1308 273 L1315 293 L1311 293 L1319 318 L1291 318 L1299 293 L1295 293 L1302 273 L1298 273 Z M1329 248 L1336 272 L1333 272 L1340 294 L1335 294 L1344 319 L1314 319 L1323 294 L1318 294 L1326 272 L1322 272 Z M1347 234 L1355 263 L1351 263 L1360 289 L1354 289 L1365 320 L1329 320 L1339 289 L1334 289 L1342 263 L1338 263 Z M1363 280 L1367 294 L1365 294 L1369 306 L1366 306 L1372 321 L1354 321 L1360 306 L1357 306 L1361 294 L1359 294 Z M1380 259 L1387 280 L1383 280 L1390 299 L1385 299 L1393 321 L1367 321 L1375 299 L1371 299 L1377 280 L1374 280 Z M1395 273 L1400 289 L1397 289 L1402 304 L1399 304 L1405 322 L1385 322 L1391 304 L1388 304 L1392 289 L1390 289 Z M1413 253 L1420 277 L1417 277 L1424 297 L1419 297 L1428 322 L1399 322 L1408 297 L1403 297 L1410 277 L1406 277 Z M1429 264 L1435 284 L1432 284 L1438 301 L1434 301 L1441 322 L1417 322 L1424 301 L1420 301 L1426 284 L1423 284 Z M1454 233 L1463 263 L1458 263 L1467 290 L1461 290 L1472 322 L1435 322 L1446 290 L1440 290 L1449 263 L1445 263 Z M1476 247 L1483 272 L1479 272 L1487 295 L1482 295 L1491 322 L1460 322 L1469 295 L1464 295 L1472 272 L1468 272 Z M1497 274 L1501 290 L1499 290 L1504 304 L1500 304 L1506 321 L1487 321 L1493 304 L1489 304 L1494 290 L1492 290 Z M1511 280 L1515 294 L1513 294 L1517 306 L1514 306 L1520 321 L1502 321 L1508 306 L1505 306 L1509 294 L1507 294 Z M1536 245 L1543 270 L1540 270 L1547 293 L1542 293 L1552 320 L1520 320 L1530 293 L1525 293 L1532 270 L1528 270 Z M1561 277 L1566 291 L1564 291 L1568 304 L1565 304 L1570 318 L1553 318 L1558 304 L1555 304 L1559 291 L1557 291 Z M1583 253 L1590 275 L1586 275 L1593 294 L1588 294 L1597 317 L1570 317 L1578 294 L1573 294 L1580 275 L1577 275 Z M1606 259 L1611 279 L1609 279 L1614 295 L1611 295 L1618 315 L1594 315 L1601 295 L1597 295 L1603 279 L1600 279 Z M1632 270 L1636 285 L1634 285 L1638 298 L1636 298 L1641 313 L1623 313 L1628 298 L1625 298 L1630 285 L1627 285 Z M-60 520 L-60 317.29811742269334 L-20 317 L20 320 L60 321 L100 322 L140 322 L180 321 L220 320 L260 317 L300 314 L340 311 L380 307 L420 303 L460 299 L500 295 L540 291 L580 287 L620 284 L660 281 L700 280 L740 278 L780 278 L820 278 L860 280 L900 282 L940 284 L980 287 L1020 291 L1060 295 L1100 299 L1140 303 L1180 307 L1220 311 L1260 314 L1300 317 L1340 320 L1380 321 L1420 322 L1460 322 L1500 321 L1540 320 L1580 317 L1620 314 L1660 311 L1680 520 Z"/>
+    <rect x="-20" y="290" width="1640" height="70" fill="var(--fog)"/>
+    <path fill="var(--ridge)" d="M-20 310 L-16 324 L-18 324 L-14 336 L-17 336 L-12 350 L-28 350 L-23 336 L-26 336 L-22 324 L-24 324 Z M14 296 L19 315 L17 315 L22 332 L19 332 L26 353 L2 353 L9 332 L5 332 L11 315 L8 315 Z M51 319 L54 331 L53 331 L56 343 L54 343 L59 356 L43 356 L48 343 L45 343 L49 331 L47 331 Z M75 322 L79 334 L77 334 L81 345 L78 345 L83 358 L68 358 L72 345 L70 345 L73 334 L72 334 Z M100 300 L106 320 L103 320 L109 338 L105 338 L112 359 L87 359 L95 338 L91 338 L97 320 L94 320 Z M122 309 L128 327 L125 327 L130 342 L127 342 L133 361 L112 361 L118 342 L115 342 L120 327 L117 327 Z M147 320 L151 334 L149 334 L153 346 L150 346 L155 361 L138 361 L143 346 L140 346 L145 334 L142 334 Z M175 298 L182 320 L179 320 L185 339 L181 339 L189 362 L162 362 L170 339 L166 339 L172 320 L169 320 Z M207 331 L211 342 L209 342 L212 351 L210 351 L214 362 L201 362 L205 351 L203 351 L206 342 L204 342 Z M233 325 L237 338 L235 338 L238 348 L236 348 L241 361 L225 361 L230 348 L228 348 L231 338 L229 338 Z M270 297 L277 319 L274 319 L280 337 L276 337 L284 360 L257 360 L265 337 L261 337 L267 319 L264 319 Z M307 294 L313 316 L310 316 L316 335 L312 335 L320 358 L293 358 L301 335 L297 335 L303 316 L300 316 Z M341 287 L348 310 L345 310 L352 330 L347 330 L356 355 L327 355 L336 330 L331 330 L338 310 L335 310 Z M377 312 L381 325 L379 325 L383 337 L381 337 L386 352 L369 352 L374 337 L371 337 L375 325 L373 325 Z M414 299 L419 316 L417 316 L422 331 L418 331 L425 349 L404 349 L410 331 L407 331 L412 316 L409 316 Z M449 294 L455 312 L452 312 L457 327 L454 327 L460 346 L438 346 L445 327 L441 327 L447 312 L444 312 Z M478 300 L483 315 L480 315 L485 328 L482 328 L487 345 L469 345 L474 328 L471 328 L476 315 L474 315 Z M507 301 L511 315 L509 315 L513 328 L510 328 L516 343 L498 343 L503 328 L500 328 L504 315 L502 315 Z M529 280 L535 301 L532 301 L538 320 L534 320 L542 342 L516 342 L524 320 L519 320 L526 301 L523 301 Z M565 273 L572 296 L568 296 L575 317 L571 317 L580 342 L550 342 L559 317 L554 317 L561 296 L558 296 Z M599 290 L604 308 L601 308 L607 324 L603 324 L610 342 L588 342 L594 324 L591 324 L596 308 L593 308 Z M634 308 L637 320 L635 320 L639 331 L637 331 L641 344 L626 344 L631 331 L628 331 L632 320 L630 320 Z M667 298 L672 314 L670 314 L674 328 L671 328 L677 345 L657 345 L663 328 L660 328 L665 314 L662 314 Z M691 309 L695 322 L693 322 L697 333 L694 333 L699 347 L683 347 L688 333 L685 333 L689 322 L687 322 Z M721 309 L725 323 L723 323 L727 335 L725 335 L730 349 L713 349 L718 335 L715 335 L719 323 L717 323 Z M750 297 L756 316 L753 316 L759 332 L755 332 L762 352 L739 352 L746 332 L742 332 L748 316 L745 316 Z M778 319 L782 331 L780 331 L784 341 L781 341 L786 354 L771 354 L775 341 L773 341 L777 331 L775 331 Z M808 317 L812 330 L810 330 L814 342 L811 342 L816 356 L800 356 L805 342 L802 342 L806 330 L804 330 Z M833 320 L837 333 L835 333 L839 345 L836 345 L841 358 L825 358 L830 345 L827 345 L831 333 L829 333 Z M860 327 L864 338 L862 338 L865 348 L863 348 L867 360 L853 360 L857 348 L855 348 L859 338 L857 338 Z M893 293 L900 316 L897 316 L904 337 L899 337 L908 361 L879 361 L887 337 L883 337 L890 316 L886 316 Z M921 303 L927 323 L924 323 L930 341 L926 341 L933 362 L909 362 L916 341 L912 341 L918 323 L915 323 Z M960 330 L963 341 L961 341 L964 350 L962 350 L966 362 L953 362 L957 350 L955 350 L958 341 L956 341 Z M983 299 L989 320 L986 320 L992 339 L988 339 L996 361 L969 361 L977 339 L973 339 L979 320 L976 320 Z M1019 304 L1025 323 L1022 323 L1028 340 L1024 340 L1031 360 L1008 360 L1015 340 L1011 340 L1016 323 L1014 323 Z M1042 312 L1047 328 L1045 328 L1050 342 L1046 342 L1052 359 L1033 359 L1039 342 L1035 342 L1040 328 L1038 328 Z M1080 291 L1086 313 L1083 313 L1090 333 L1085 333 L1094 356 L1066 356 L1074 333 L1070 333 L1077 313 L1073 313 Z M1116 315 L1120 328 L1118 328 L1122 340 L1119 340 L1124 353 L1108 353 L1113 340 L1110 340 L1114 328 L1112 328 Z M1153 305 L1158 320 L1155 320 L1160 334 L1157 334 L1162 350 L1144 350 L1149 334 L1146 334 L1151 320 L1148 320 Z M1187 312 L1191 324 L1189 324 L1193 335 L1190 335 L1195 347 L1180 347 L1184 335 L1182 335 L1186 324 L1184 324 Z M1227 291 L1232 309 L1229 309 L1235 325 L1231 325 L1238 345 L1215 345 L1222 325 L1219 325 L1224 309 L1221 309 Z M1261 305 L1265 318 L1263 318 L1267 329 L1264 329 L1269 343 L1253 343 L1258 329 L1255 329 L1259 318 L1257 318 Z M1294 289 L1299 307 L1296 307 L1302 323 L1298 323 L1305 342 L1282 342 L1289 323 L1285 323 L1291 307 L1288 307 Z M1325 298 L1330 313 L1328 313 L1332 326 L1329 326 L1335 342 L1316 342 L1322 326 L1319 326 L1323 313 L1321 313 Z M1360 299 L1364 314 L1362 314 L1367 327 L1364 327 L1369 343 L1351 343 L1356 327 L1353 327 L1358 314 L1356 314 Z M1386 307 L1389 319 L1388 319 L1391 330 L1389 330 L1393 343 L1378 343 L1383 330 L1380 330 L1384 319 L1382 319 Z M1419 311 L1423 323 L1421 323 L1425 333 L1422 333 L1427 345 L1412 345 L1417 333 L1414 333 L1418 323 L1416 323 Z M1444 314 L1447 325 L1446 325 L1449 335 L1447 335 L1451 347 L1437 347 L1441 335 L1439 335 L1442 325 L1441 325 Z M1477 297 L1482 315 L1480 315 L1485 331 L1481 331 L1488 349 L1466 349 L1472 331 L1469 331 L1474 315 L1472 315 Z M1508 320 L1511 331 L1509 331 L1513 341 L1510 341 L1514 352 L1501 352 L1505 341 L1503 341 L1506 331 L1505 331 Z M1537 311 L1541 326 L1539 326 L1543 339 L1540 339 L1546 354 L1527 354 L1533 339 L1530 339 L1534 326 L1532 326 Z M1558 326 L1561 336 L1560 336 L1563 345 L1561 345 L1565 356 L1552 356 L1556 345 L1554 345 L1557 336 L1555 336 Z M1598 324 L1602 336 L1600 336 L1604 346 L1601 346 L1606 359 L1591 359 L1595 346 L1593 346 L1597 336 L1595 336 Z M1624 319 L1628 333 L1626 333 L1631 346 L1628 346 L1633 360 L1616 360 L1621 346 L1618 346 L1622 333 L1620 333 Z M-60 520 L-60 350.34103867306584 L-20 350 L20 354 L60 357 L100 359 L140 361 L180 362 L220 362 L260 360 L300 358 L340 355 L380 352 L420 348 L460 346 L500 343 L540 342 L580 342 L620 343 L660 345 L700 348 L740 351 L780 354 L820 357 L860 360 L900 361 L940 362 L980 362 L1020 360 L1060 358 L1100 355 L1140 351 L1180 348 L1220 345 L1260 343 L1300 342 L1340 342 L1380 343 L1420 345 L1460 348 L1500 351 L1540 355 L1580 358 L1620 360 L1660 362 L1680 520 Z"/>
+    <!-- château d'eau -->
+    <g fill="none" stroke="var(--near)" stroke-width="6">
+      <path d="M1084 300 L1062 436 M1156 300 L1178 436 M1120 302 L1120 436"/>
+      <path d="M1076 350 L1166 350 M1070 396 L1172 396 M1080 350 L1168 396 M1162 350 L1072 396" stroke-width="3"/>
+    </g>
+    <path d="M1048 236 L1120 192 L1192 236 Z" fill="var(--tower-roof)"/>
+    <rect x="1058" y="232" width="124" height="74" rx="6" fill="var(--tower)"/>
+    <rect x="1052" y="300" width="136" height="7" fill="var(--near)"/>
+    <text x="1120" y="282" text-anchor="middle" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="36" letter-spacing="2" fill="var(--tower-ink)">PARIS</text>
+    <!-- maisons -->
+    <g fill="var(--near)">
+      <path d="M120 436 L120 372 L176 336 L232 372 L232 436 Z"/>
+      <path d="M250 436 L250 384 L318 384 L318 436 Z"/>
+      <path d="M1290 436 L1290 380 L1340 350 L1390 380 L1390 436 Z"/>
+      <path d="M1410 436 L1410 360 L1500 360 L1500 436 Z"/>
+    </g>
+    <g fill="var(--window)">
+      <rect x="140" y="390" width="16" height="18"/><rect x="196" y="390" width="16" height="18" opacity="0.5"/>
+      <rect x="268" y="398" width="14" height="14"/>
+      <rect x="1318" y="396" width="14" height="16"/><rect x="1436" y="378" width="12" height="14" opacity="0.6"/><rect x="1464" y="378" width="12" height="14"/>
+    </g>
+    <!-- poteaux et fils -->
+    <g stroke="var(--near)" fill="none">
+      <path d="M420 436 L420 230 M392 246 L448 246 M520 436 L520 300 M500 312 L540 312" stroke-width="5"/>
+      <path d="M392 248 Q456 290 500 314 M448 248 Q490 286 540 314 M0 270 Q200 300 392 248" stroke-width="1.5"/>
+    </g>
+    <!-- route -->
+    <path d="M560 520 L1040 520 L812 384 L788 384 Z" fill="var(--road)"/>
+    <path d="M800 390 L800 400 M800 414 L800 432 M800 450 L800 478 M800 498 L800 520" stroke="var(--road-line)" stroke-width="4"/>
+    <rect x="-20" y="430" width="1640" height="10" fill="var(--road)"/>
+    <circle cx="806" cy="396" r="2.6" fill="var(--tail)"/><circle cx="816" cy="396" r="2.6" fill="var(--tail)"/>
+    <!-- lampadaire -->
+    <circle cx="960" cy="330" r="90" fill="var(--lamp-glow)" opacity="0.7"/>
+    <path d="M990 436 L990 326 Q990 316 978 316 L962 316" stroke="var(--near)" stroke-width="5" fill="none"/>
+    <rect x="950" y="314" width="18" height="6" rx="2" fill="var(--sodium-hot)"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="doors">
+      <a class="door" href="cahier-de-recherche.html">
+        <span class="door-lamp" aria-hidden="true"></span>
+        <span class="door-frame" aria-hidden="true"><span class="door-leaf" style="--door: var(--door-1)"><span class="door-no">1</span><span class="door-knob"></span></span></span>
+        <span class="door-txt"><b>Cahier de recherche</b><span>La série, les codes relevés, mes notes de visionnage.</span></span>
+      </a>
+      <a class="door" href="identite.html">
+        <span class="door-lamp" aria-hidden="true"></span>
+        <span class="door-frame" aria-hidden="true"><span class="door-leaf" style="--door: var(--door-2)"><span class="door-no">2</span><span class="door-knob"></span></span></span>
+        <span class="door-txt"><b>Identité visuelle</b><span>Le logo, sept couleurs, trois typographies, et l'origine de chacun.</span></span>
+      </a>
+      <a class="door" href="brand-kit.html">
+        <span class="door-lamp" aria-hidden="true"></span>
+        <span class="door-frame" aria-hidden="true"><span class="door-leaf" style="--door: var(--door-3)"><span class="door-no">3</span><span class="door-knob"></span><span class="door-tag">Prière de déranger</span></span></span>
+        <span class="door-txt"><b>Brand kit</b><span>Règles d'usage, voix, applications.</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== LE CARNET -->
+<section class="ep-sec band" id="propos" data-ep="Ép. 4">
+  <div class="wrap">
+    <div class="ep">
+      <span class="ep-k">Saison III · Épisode 4</span>
+      <h2>Le carnet du gardien</h2>
+    </div>
+
+    <div class="journal">
+      <article class="page">
+        <span class="page-head">Carnet du gardien — p. 1</span>
+        <p>Je suis étudiant en marketing à Paris, en dernière année de licence, à la recherche d'une alternance — quatre jours par semaine en entreprise, un jour à l'école.</p>
+        <p>L'essentiel de ce que je sais vient de ce que j'ai construit. L'été dernier, j'ai passé quatre mois sur le site d'un transitaire, sans équipe de design, sans brief et sans marque existante : j'ai mené la recherche, écrit les contenus, dessiné l'identité et livré le site.</p>
+        <p>C'est ce travail que je veux refaire : <strong>le dossier en entier, du début à la fin</strong>, plutôt qu'une slide dans la présentation de quelqu'un d'autre.</p>
+        <p>Ce que je sais faire : trouver le vrai problème avant de toucher à une maquette, écrire des contenus qui sonnent humains, et construire ce que je dessine.</p>
+        <span class="note n1">→ toujours le dossier en entier</span>
+        <span class="note n2">à apprendre : le motion</span>
+        <div class="page-seal" aria-hidden="true"><svg class="seal" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+  <defs><path id="pg-h" d="M21 120 A99 99 0 0 1 219 120"/><path id="pg-b" d="M11 120 A109 109 0 0 0 229 120"/></defs>
+  <circle cx="120" cy="120" r="115" fill="none" stroke="currentColor" stroke-width="4"/>
+  <circle cx="120" cy="120" r="93" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <g font-family="Archivo Narrow, Arial Narrow, Arial, sans-serif" font-weight="700" font-size="12" letter-spacing="3.2" fill="currentColor">
+    <text text-anchor="middle"><textPath href="#pg-h" startOffset="50%">MARWEN · MARQUE &amp; MARKETING</textPath></text>
+    <text text-anchor="middle"><textPath href="#pg-b" startOffset="50%">PARIS · MMXXVI</textPath></text>
+  </g>
+  <path d="M10 120 l4 -4 l4 4 l-4 4Z M222 120 l4 -4 l4 4 l-4 4Z" fill="currentColor"/>
+  <g transform="translate(120 122) scale(0.8) translate(-120 -110)"><path d="M88.19 130.33 L78.40 87.12 L74.90 87.91 L63.88 72 L72 75.50 L61.78 59 L67 62.50 L58 46 L49 62.50 L54.22 59 L44 75.50 L52.12 72 L40 89.50 L52 89.50 L52 172 L64 172 L64 89.50 L70.74 89.50 L89.81 173.67 L104.32 76.50 L114 76.50 L114 172 L126 172 L126 76.50 L135.68 76.50 L150.19 173.67 L169.26 89.50 L176 89.50 L176 172 L188 172 L188 89.50 L200 89.50 L187.88 72 L196 75.50 L185.78 59 L191 62.50 L182 46 L173 62.50 L178.22 59 L168 75.50 L176.12 72 L165.10 87.91 L161.60 87.12 L151.81 130.33 L143.46 74.41 L139.81 74.95 L126.72 58 L136 61.50 L124.20 44 L130 47.50 L120 30 L110 47.50 L115.80 44 L104 61.50 L113.28 58 L100.19 74.95 L96.54 74.41ZM119.10 160 L119.10 84.50 L120.90 84.50 L120.90 160ZM58.90 160 L57.10 160 L57.10 97.50 L58.90 97.50ZM182.90 160 L181.10 160 L181.10 97.50 L182.90 97.50ZM40 185.50 L104 185.50 L104 179 L40 179ZM112 185.50 L128 185.50 L128 179 L112 179ZM136 185.50 L200 185.50 L200 179 L136 179Z" fill="currentColor" fill-rule="evenodd"/><path d="M84 34 a12 12 0 1 0 12 18 a9.5 9.5 0 1 1 -12 -18Z" fill="currentColor"/></g>
+</svg></div>
+      </article>
+
+      <aside class="journal-side">
+        <figure class="polaroid">
+          <div class="polaroid-img"><span>Votre photo ici</span></div>
+          <figcaption>Le gardien · Paris</figcaption>
+        </figure>
+        <dl class="index-card">
+          <div><dt>Gardien</dt><dd>Marwen</dd></div>
+          <div><dt>Territoire</dt><dd>Paris, FR</dd></div>
+          <div><dt>Rythme</dt><dd>4 j. entreprise / 1 j. école</dd></div>
+          <div><dt>Métier</dt><dd>Marque · Web · Croissance</dd></div>
+          <div><dt>Série</dt><dd>Supernatural</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="salt" role="separator"><span>Ligne de sel</span></div>
+
+<!-- ===================================================== LA CLÉ -->
+<section class="ep-sec" id="contact" data-ep="Ép. 5">
+  <div class="wrap">
+    <div class="ep">
+      <span class="ep-k">Saison III · Épisode 5</span>
+      <h2>La clé de la chambre</h2>
+      <p class="lede">À la recherche d'une alternance en marque, marketing ou social media — quatre jours par semaine en entreprise, un jour à l'école, dès cette année scolaire.</p>
+    </div>
+
+    <div class="keyroom">
+      <svg class="fob" viewBox="0 0 260 340" role="img" aria-label="Porte-clé de motel : chambre 26/27, Paris">
+        <circle cx="130" cy="40" r="26" fill="none" stroke="var(--chrome)" stroke-width="6"/>
+        <path d="M130 66 L130 70" stroke="var(--chrome)" stroke-width="6"/>
+        <g transform="translate(130 92)">
+          <path d="M-14 -22 L14 -22 L14 -2 L6 6 L6 70 L16 70 L16 80 L6 80 L6 90 L14 90 L14 100 L6 100 L6 112 L-6 112 L-6 6 L-14 -2 Z" fill="var(--chrome)" transform="rotate(-24) translate(-60 -10)"/>
+        </g>
+        <path d="M130 76 L232 190 L130 322 L28 190 Z" fill="var(--fob)" stroke="var(--fob-edge)" stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="130" cy="100" r="8" fill="var(--bg)"/>
+        <text x="130" y="150" text-anchor="middle" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing="3" fill="var(--fob-ink)">MOTEL MARWEN</text>
+        <text x="130" y="176" text-anchor="middle" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="600" font-size="12" letter-spacing="3" fill="var(--fob-ink)" opacity="0.75">CHAMBRE</text>
+        <text x="130" y="222" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="800" font-size="46" fill="var(--fob-ink)">26/27</text>
+        <text x="130" y="252" text-anchor="middle" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="var(--fob-ink)" opacity="0.75">PARIS · ALTERNANCE</text>
+      </svg>
+
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="tampon">Courriel</span>
+          <span class="val todo" id="c-mail">votre@adresse</span>
+          <button class="pill copy" type="button" data-copy="c-mail">Copier</button>
+        </div>
+        <div class="ledger-row">
+          <span class="tampon">LinkedIn</span>
+          <span class="val todo" id="c-in">/in/votre-profil</span>
+          <button class="pill copy" type="button" data-copy="c-in">Copier</button>
+        </div>
+        <div class="ledger-row">
+          <span class="tampon">Territoire</span>
+          <span class="val">Paris, IDF</span>
+        </div>
+        <div class="ledger-row">
+          <span class="tampon">Disponibilité</span>
+          <span class="val">Immédiate</span>
+        </div>
+        <p class="copy-note" id="copy-msg" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="endroad" aria-hidden="true">
+  <svg viewBox="0 0 1600 320" preserveAspectRatio="xMidYMax slice" focusable="false">
+    <rect width="1600" height="320" fill="var(--sky-2)"/>
+    <path fill="var(--ridge)" d="M-20 123 L-9 159 L-15 159 L-4 191 L-11 191 L2 230 L-42 230 L-29 191 L-36 191 L-25 159 L-31 159 Z M11 84 L26 133 L18 133 L33 177 L23 177 L42 230 L-20 230 L-1 177 L-11 177 L4 133 L-4 133 Z M34 101 L47 145 L40 145 L53 184 L44 184 L61 230 L6 230 L23 184 L14 184 L27 145 L21 145 Z M63 110 L75 151 L69 151 L81 187 L73 187 L88 230 L38 230 L53 187 L45 187 L57 151 L51 151 Z M83 168 L89 189 L86 189 L92 208 L88 208 L96 230 L69 230 L77 208 L73 208 L79 189 L76 189 Z M107 103 L120 146 L113 146 L126 184 L117 184 L133 230 L80 230 L96 184 L87 184 L100 146 L94 146 Z M129 125 L139 161 L134 161 L145 192 L138 192 L151 230 L107 230 L120 192 L113 192 L123 161 L118 161 Z M152 94 L166 140 L159 140 L172 181 L163 181 L180 230 L123 230 L140 181 L131 181 L145 140 L138 140 Z M185 134 L195 167 L190 167 L199 195 L193 195 L205 230 L165 230 L177 195 L170 195 L180 167 L175 167 Z M219 164 L226 187 L222 187 L229 206 L224 206 L233 230 L205 230 L213 206 L209 206 L216 187 L212 187 Z M250 91 L264 138 L257 138 L271 180 L262 180 L279 230 L221 230 L238 180 L229 180 L243 138 L236 138 Z M270 106 L283 148 L277 148 L289 186 L281 186 L296 230 L244 230 L260 186 L252 186 L264 148 L258 148 Z M297 84 L312 134 L305 134 L319 177 L310 177 L328 230 L267 230 L285 177 L275 177 L290 134 L283 134 Z M319 121 L330 158 L324 158 L335 191 L328 191 L341 230 L296 230 L310 191 L302 191 L313 158 L308 158 Z M351 113 L363 152 L357 152 L369 188 L361 188 L375 230 L326 230 L341 188 L333 188 L345 152 L339 152 Z M374 163 L381 186 L377 186 L384 206 L379 206 L388 230 L360 230 L368 206 L364 206 L370 186 L367 186 Z M407 127 L417 162 L412 162 L422 193 L415 193 L428 230 L385 230 L398 193 L391 193 L402 162 L396 162 Z M441 157 L448 182 L444 182 L452 204 L447 204 L456 230 L425 230 L435 204 L430 204 L437 182 L433 182 Z M472 97 L485 142 L478 142 L492 182 L483 182 L500 230 L444 230 L461 182 L452 182 L465 142 L458 142 Z M504 168 L511 189 L508 189 L514 208 L510 208 L517 230 L491 230 L499 208 L495 208 L501 189 L498 189 Z M-60 320 L-60 230 L-20 230 L20 230 L60 230 L100 230 L140 230 L180 230 L220 230 L260 230 L300 230 L340 230 L380 230 L420 230 L460 230 L500 230 L540 230 L560 320 Z"/>
+    <path fill="var(--ridge)" d="M1080 109 L1092 150 L1086 150 L1098 186 L1090 186 L1105 230 L1055 230 L1070 186 L1062 186 L1074 150 L1068 150 Z M1111 123 L1121 159 L1116 159 L1127 192 L1120 192 L1133 230 L1088 230 L1102 192 L1094 192 L1105 159 L1100 159 Z M1137 135 L1146 167 L1142 167 L1151 196 L1145 196 L1157 230 L1117 230 L1129 196 L1122 196 L1132 167 L1127 167 Z M1171 144 L1179 173 L1175 173 L1184 199 L1178 199 L1189 230 L1153 230 L1163 199 L1158 199 L1166 173 L1162 173 Z M1191 147 L1199 175 L1195 175 L1204 200 L1198 200 L1209 230 L1174 230 L1184 200 L1178 200 L1187 175 L1183 175 Z M1213 141 L1222 171 L1218 171 L1227 198 L1221 198 L1232 230 L1194 230 L1206 198 L1200 198 L1209 171 L1204 171 Z M1236 160 L1243 184 L1239 184 L1246 205 L1241 205 L1250 230 L1221 230 L1230 205 L1225 205 L1232 184 L1228 184 Z M1259 142 L1268 172 L1263 172 L1272 198 L1266 198 L1277 230 L1240 230 L1251 198 L1245 198 L1254 172 L1250 172 Z M1286 152 L1294 178 L1290 178 L1298 202 L1292 202 L1302 230 L1269 230 L1279 202 L1274 202 L1282 178 L1278 178 Z M1305 152 L1313 178 L1309 178 L1317 202 L1312 202 L1321 230 L1289 230 L1298 202 L1293 202 L1301 178 L1297 178 Z M1332 135 L1341 167 L1336 167 L1346 196 L1340 196 L1352 230 L1312 230 L1324 196 L1317 196 L1327 167 L1322 167 Z M1361 98 L1375 143 L1368 143 L1381 182 L1372 182 L1389 230 L1334 230 L1350 182 L1341 182 L1355 143 L1348 143 Z M1386 161 L1393 184 L1389 184 L1396 205 L1392 205 L1400 230 L1372 230 L1380 205 L1376 205 L1383 184 L1379 184 Z M1416 102 L1429 146 L1422 146 L1435 184 L1426 184 L1443 230 L1389 230 L1405 184 L1396 184 L1409 146 L1403 146 Z M1440 111 L1452 151 L1446 151 L1458 187 L1450 187 L1465 230 L1415 230 L1430 187 L1422 187 L1434 151 L1428 151 Z M1463 88 L1477 136 L1470 136 L1484 179 L1475 179 L1493 230 L1433 230 L1451 179 L1441 179 L1456 136 L1448 136 Z M1494 99 L1507 143 L1501 143 L1514 183 L1505 183 L1522 230 L1467 230 L1483 183 L1474 183 L1488 143 L1481 143 Z M1527 149 L1536 177 L1531 177 L1540 201 L1534 201 L1544 230 L1510 230 L1521 201 L1515 201 L1523 177 L1519 177 Z M1554 104 L1567 147 L1560 147 L1573 185 L1565 185 L1581 230 L1528 230 L1544 185 L1535 185 L1548 147 L1541 147 Z M1585 135 L1595 167 L1590 167 L1599 196 L1593 196 L1605 230 L1565 230 L1577 196 L1571 196 L1580 167 L1575 167 Z M1605 114 L1617 153 L1611 153 L1623 188 L1615 188 L1630 230 L1581 230 L1595 188 L1588 188 L1599 153 L1593 153 Z M1625 107 L1637 149 L1631 149 L1643 186 L1635 186 L1651 230 L1599 230 L1614 186 L1606 186 L1619 149 L1612 149 Z M1040 320 L1040 230 L1080 230 L1120 230 L1160 230 L1200 230 L1240 230 L1280 230 L1320 230 L1360 230 L1400 230 L1440 230 L1480 230 L1520 230 L1560 230 L1600 230 L1640 230 L1680 230 L1680 320 Z"/>
+    <path d="M-20 230 L1620 230 L1620 320 L-20 320 Z" fill="var(--near)"/>
+    <path d="M420 320 L1180 320 L812 232 L788 232 Z" fill="var(--road)"/>
+    <path d="M800 238 L800 246 M800 256 L800 270 M800 284 L800 306" stroke="var(--road-line)" stroke-width="4"/>
+    <rect x="-20" y="180" width="1640" height="70" fill="var(--fog)"/>
+  </svg>
+  <p class="endroad-t">La route continue.</p>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Marwen · Carnet de terrain vol. III · Paris 2026</p>
+    <nav aria-label="Navigation du pied de page">
+      <a href="index.html">Dossiers</a>
+      <a href="cahier-de-recherche.html">Cahier</a>
+      <a href="identite.html">Identité</a>
+      <a href="brand-kit.html">Brand kit</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Compteur : la voiture avance avec la lecture -->
+<div class="odo" id="odo">
+  <div class="odo-road" id="odo-road">
+    <svg class="odo-car" id="odo-car" viewBox="0 0 400 110" aria-hidden="true" focusable="false"><use href="#car-sym"/></svg>
+  </div>
+  <span class="odo-ep" id="odo-ep" aria-hidden="true">Ép. 001/327</span>
+</div>
+
+<script src="assets/site.js"></script>
+<script src="assets/home.js"></script>
+</body>
+</html>
